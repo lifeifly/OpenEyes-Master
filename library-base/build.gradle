@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+            if (isBuildModule.toBoolean()) {
+
+            } else {
+                resources {
+                    //正式版本时，排除debug文件夹下所有调试文件
+                    exclude 'src/debug/*'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    api rootProject.ext.androidx["androidx-appcompat"]
+    api rootProject.ext.androidx["androidx.work"]
+    api rootProject.ext.androidx["androidx.lifecycle"]
+    api rootProject.ext.androidx["androidx.constraintlayout"]
+    api rootProject.ext.androidx["android.material"]
+    api rootProject.ext.androidx["androidx.navigation-fragment"]
+    api rootProject.ext.androidx["androidx.navigation-ui:"]
+    api rootProject.ext.androidx["room-ktx"]
+    kapt rootProject.ext.androidx["room-compile"]
+
+    api rootProject.ext.dependencies["gson"]
+    api rootProject.ext.dependencies["rxjava2"]
+    api rootProject.ext.dependencies["rxpermissions"]
+    api rootProject.ext.dependencies["immersionbar"]
+    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies["BaseRecyclerViewAdapterHelper"]
+    api 'jp.wasabeef:glide-transformations:4.1.0'
+    api rootProject.ext.androidx["kotlin-stdlib"]
+    api rootProject.ext.androidx["androidx.core"]
+    api rootProject.ext.androidx["androidx.datastore"]
+    api rootProject.ext.dependencies["sonic"]
+    api rootProject.ext.dependencies["circleview"]
+    api rootProject.ext.dependencies["ViewPager2"]
+    api rootProject.ext.dependencies["FlycoTabLayout"]
+    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    api 'org.greenrobot:eventbus:3.1.1'
+
+    api 'com.umeng.umsdk:common:9.3.8'
+    implementation 'com.umeng.umsdk:asms:1.2.2'
+    implementation 'com.umeng.umsdk:utdid:1.5.2.1'
+    //友盟Push相关依赖（必须）
+    api 'com.umeng.umsdk:push:6.3.3'
+    implementation 'com.umeng.umsdk:alicloud-httpdns:1.3.2.3'
+    implementation 'com.umeng.umsdk:alicloud-utils:2.0.0'
+    implementation 'com.umeng.umsdk:alicloud_beacon:1.0.5'
+    api 'com.umeng.umsdk:agoo-accs:3.4.2.7'
+    implementation 'com.umeng.umsdk:agoo_aranger:1.0.6'
+    implementation 'com.umeng.umsdk:agoo_networksdk:3.5.8'
+    implementation 'com.umeng.umsdk:agoo_tnet4android:3.1.14.10'
+
+}

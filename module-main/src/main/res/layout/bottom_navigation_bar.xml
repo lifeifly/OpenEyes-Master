@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="42dp"
+    android:background="@color/common_color_bar"
+    android:paddingHorizontal="24dp">
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/btn_home"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_bottom_tv_home"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_home"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_home"
+        app:layout_constraintTop_toTopOf="@id/main_bottom_iv_home" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/btn_community"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_bottom_tv_community"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_community"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_community"
+        app:layout_constraintTop_toTopOf="@id/main_bottom_iv_community" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/btn_notification"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_bottom_tv_notification"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_notification"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_notification"
+        app:layout_constraintTop_toTopOf="@id/main_bottom_iv_notification" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/btn_user"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_bottom_tv_user"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_user"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_user"
+        app:layout_constraintTop_toTopOf="@id/main_bottom_iv_user" />
+
+    <ImageView
+        android:id="@+id/main_bottom_iv_home"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="@id/main_bottom_tv_home"
+        app:layout_constraintEnd_toStartOf="@id/main_bottom_iv_community"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sel_bottom_navigation_home" />
+
+    <TextView
+        android:id="@+id/main_bottom_tv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="首页"
+        android:textColor="@color/sel_bottom_text_color"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_home"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_home"
+        app:layout_constraintTop_toBottomOf="@id/main_bottom_iv_home" />
+
+    <ImageView
+        android:id="@+id/main_bottom_iv_community"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_bottom_iv_release"
+        app:layout_constraintStart_toEndOf="@id/main_bottom_iv_home"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sel_bottom_navigation_community" />
+
+    <TextView
+        android:id="@+id/main_bottom_tv_community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="社区"
+        android:textColor="@color/sel_bottom_text_color"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_community"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_community"
+        app:layout_constraintTop_toBottomOf="@id/main_bottom_iv_community" />
+
+    <ImageView
+        android:id="@+id/main_bottom_iv_release"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/main_bottom_iv_notification"
+        app:layout_constraintStart_toEndOf="@id/main_bottom_iv_community"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/btn_release_normal" />
+
+    <ImageView
+        android:id="@+id/main_bottom_iv_notification"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/main_bottom_iv_user"
+        app:layout_constraintStart_toEndOf="@id/main_bottom_iv_release"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sel_bottom_navigation_notification" />
+
+    <TextView
+        android:id="@+id/main_bottom_tv_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="通知"
+        android:textColor="@color/sel_bottom_text_color"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_notification"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_notification"
+        app:layout_constraintTop_toBottomOf="@id/main_bottom_iv_notification" />
+
+    <ImageView
+        android:id="@+id/main_bottom_iv_user"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/main_bottom_iv_notification"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sel_bottom_navigation_user" />
+
+    <TextView
+        android:id="@+id/main_bottom_tv_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="通知"
+        android:textColor="@color/sel_bottom_text_color"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_iv_user"
+        app:layout_constraintStart_toStartOf="@id/main_bottom_iv_user"
+        app:layout_constraintTop_toBottomOf="@id/main_bottom_iv_user" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

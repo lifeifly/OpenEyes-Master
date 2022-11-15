@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blackAlpha50">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="14dp"
+        app:civ_border_color="@color/whiteAlpha80"
+        app:civ_border_width="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_avatar_gray_76dp" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="13dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_like"
+        app:layout_constraintStart_toEndOf="@id/iv_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_avatar"
+        tools:text="香柠气泡" />
+
+    <TextView
+        android:id="@+id/tv_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_like"
+        app:layout_constraintEnd_toStartOf="@+id/iv_like"
+        app:layout_constraintTop_toTopOf="@+id/iv_like"
+        tools:text="29" />
+
+    <ImageView
+        android:id="@+id/iv_like"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="14dp"
+        android:paddingStart="5dp"
+        android:src="@drawable/ic_like"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_reply_user"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/whiteAlpha35"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="回复 @lifei" />
+
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/iv_like"
+        app:layout_constraintStart_toStartOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_reply_user"
+        tools:text="噜啦啦噜啦啦来了" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/reply_group"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_radius_black_alpha_85_4dp_bg"
+        android:visibility="gone"
+        app:constraint_referenced_ids="iv_reply_avatar,tv_reply_user,tv_reply_name,tv_rely_showConversation,space_reply_end,tv_reply_comment"
+        app:layout_constraintBottom_toBottomOf="@+id/space_reply_end"
+        app:layout_constraintEnd_toEndOf="@id/iv_like"
+        app:layout_constraintStart_toStartOf="@id/tv_comment"
+        app:layout_constraintTop_toBottomOf="@id/tv_comment" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_reply_avatar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="11dp"
+        app:civ_border_color="@color/gray"
+        app:civ_border_width="1px"
+        app:layout_constraintStart_toStartOf="@id/reply_group"
+        app:layout_constraintTop_toTopOf="@id/reply_group"
+        tools:src="@drawable/ic_avatar_gray_76dp" />
+
+    <TextView
+        android:id="@+id/tv_reply_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="13dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textColor="@color/whiteAlpha10"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/reply_group"
+        app:layout_constraintStart_toEndOf="@id/iv_reply_avatar"
+        app:layout_constraintTop_toTopOf="@id/iv_reply_avatar"
+        tools:text="那么稻草" />
+
+    <TextView
+        android:id="@+id/tv_reply_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/whiteAlpha25"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/reply_group"
+        app:layout_constraintStart_toStartOf="@id/tv_reply_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_reply_name"
+        tools:text="时代在变，思想不能固话。接受多元化，惟愿我们都心怀善意。" />
+
+    <Space
+        android:id="@+id/space_reply_end"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        app:layout_constraintEnd_toEndOf="@id/reply_group"
+        app:layout_constraintStart_toStartOf="@id/reply_group"
+        app:layout_constraintTop_toBottomOf="@id/tv_reply_comment" />
+
+    <TextView
+        android:id="@+id/tv_rely_showConversation"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/show_conversation"
+        android:textColor="@color/whiteAlpha25"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_reply"
+        app:layout_constraintStart_toStartOf="@id/tv_comment"
+        app:layout_constraintTop_toTopOf="@id/tv_reply" />
+
+    <TextView
+        android:id="@+id/tv_reply"
+        android:layout_width="wrap_content"
+        android:layout_height="22dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="@string/reply"
+        android:textColor="@color/whiteAlpha25"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/tv_rely_showConversation"
+        app:layout_goneMarginStart="0dp"
+        app:layout_goneMarginTop="6dp"
+        app:layout_constraintTop_toBottomOf="@id/reply_group" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:gravity="center"
+        android:textColor="@color/whiteAlpha20"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_reply"
+        app:layout_constraintStart_toEndOf="@id/tv_reply"
+        app:layout_constraintTop_toTopOf="@id/tv_reply"
+        tools:text="13:42" />
+
+    <ImageView
+        android:id="@+id/iv_more"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/ic_more_horiz_white_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_time" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_marginTop="6dp"
+        android:background="@color/whiteAlpha85"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_reply" />
+</androidx.constraintlayout.widget.ConstraintLayout>

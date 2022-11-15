@@ -1,0 +1,13 @@
+include ':module-main'
+include ':module-more'
+include ':module-player'
+include ':module-home'
+include ':module-community'
+include ':module-user'
+include ':library-servicemanager'
+include ':library-network'
+include ':library-video'
+include ':library-common'
+include ':library-base'
+include ':app'
+rootProject.name = "Android-MVVMComponent"

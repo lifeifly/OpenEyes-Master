@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CommonCustomTextView">
+        <attr name="typeface">
+            <enum name="db1" value="1" />
+            <enum name="gb" value="2" />
+            <enum name="lobster" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="NoStatusFooter">
+        <attr name="srlPrimaryColor" />
+        <attr name="srlAccentColor" />
+        <attr name="srlTextSizeTitle" />
+        <attr name="srlTextNothing" />
+    </declare-styleable>
+</resources>

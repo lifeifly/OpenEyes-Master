@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blackAlpha50"
+        android:fitsSystemWindows="true"
+        tools:context=".NewDetailActivity">
+
+
+        <ImageView
+            android:id="@+id/iv_blurred_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/bg_splash" />
+
+        <com.example.library_video.DetailVideoPlayer
+            android:id="@+id/videoPlayer"
+            android:layout_width="0dp"
+            android:layout_height="202dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.scwang.smart.refresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/blackAlpha55"
+            app:layout_constraintBottom_toTopOf="@+id/comment_space"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/videoPlayer">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="bottom|center_horizontal"
+                android:paddingBottom="8dp"
+                android:text="@string/pull_down_close_page"
+                android:textColor="@color/white"
+                android:textSize="10sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_video_info" />
+        </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+        <Space
+            android:id="@+id/comment_space"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="#8c000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar_comment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/ic_logo_black_76dp"
+            app:civ_border_color="@color/blackAlpha55"
+            app:civ_border_width="1dp"
+            app:civ_circle_background_color="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/comment_space"
+            app:layout_constraintEnd_toStartOf="@+id/et_comment"
+            app:layout_constraintStart_toStartOf="@id/comment_space"
+            app:layout_constraintTop_toTopOf="@id/comment_space" />
+
+        <EditText
+            android:id="@+id/et_comment"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/shape_comment_edit_text_bg"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="@string/click_send_comment"
+            android:paddingHorizontal="12dp"
+            android:textColorHint="@color/whiteAlpha20"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/comment_space"
+            app:layout_constraintEnd_toStartOf="@+id/iv_comment"
+            app:layout_constraintStart_toEndOf="@id/iv_avatar_comment"
+            app:layout_constraintTop_toTopOf="@id/comment_space" />
+
+        <ImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            android:src="@drawable/ic_reply_white_20dp"
+            app:layout_constraintBottom_toBottomOf="@id/comment_space"
+            app:layout_constraintEnd_toStartOf="@+id/tv_comment"
+            app:layout_constraintTop_toTopOf="@id/comment_space" />
+
+        <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:textColor="@color/whiteAlpha20"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/comment_space"
+            app:layout_constraintEnd_toEndOf="@id/comment_space"
+            app:layout_constraintTop_toTopOf="@id/comment_space"
+            tools:text="25" />
+
+        <Space
+            android:id="@+id/title_bar_space"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+             />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_pull_down"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/ic_pull_down_white_30dp"
+            app:civ_border_color="@android:color/transparent"
+            app:civ_border_width="4dp"
+            app:civ_circle_background_color="#dedede"
+            app:layout_constraintStart_toStartOf="@id/title_bar_space"
+            app:layout_constraintTop_toTopOf="@id/title_bar_space" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/header_controll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="iv_share,iv_collect,iv_pull_down,iv_more"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/iv_more"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="3dp"
+            android:padding="13dp"
+            android:src="@drawable/ic_more_white_19dp"
+            app:layout_constraintEnd_toEndOf="@id/title_bar_space"
+            app:layout_constraintTop_toTopOf="@id/title_bar_space" />
+
+        <ImageView
+            android:id="@+id/iv_share"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:padding="11dp"
+            android:src="@drawable/ic_share_white_20dp"
+            app:layout_constraintEnd_toStartOf="@id/iv_more"
+            app:layout_constraintTop_toTopOf="@id/title_bar_space" />
+
+        <ImageView
+            android:id="@+id/iv_collect"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:padding="11dp"
+            android:src="@drawable/ic_favorite_border_white_20dp"
+            app:layout_constraintEnd_toStartOf="@id/iv_share"
+            app:layout_constraintTop_toTopOf="@id/title_bar_space" />
+
+        <LinearLayout
+            android:id="@+id/ll_share"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:background="@drawable/shape_radius_black_alpha_60_4dp_bg"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/videoPlayer"
+            app:layout_constraintEnd_toEndOf="@id/videoPlayer"
+            app:layout_constraintStart_toStartOf="@id/videoPlayer"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/ivToWechatFriends"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_share_wechat_white_30dp" />
+
+            <ImageView
+                android:id="@+id/ivToWechatMemories"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_share_wechat_memory_white_30dp"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivToWeibo"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_share_weibo_white_30dp" />
+
+            <ImageView
+                android:id="@+id/ivToQQ"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_share_qq_white_30dp" />
+
+            <ImageView
+                android:id="@+id/ivToQQZone"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_share_qq_zone_white_30dp" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

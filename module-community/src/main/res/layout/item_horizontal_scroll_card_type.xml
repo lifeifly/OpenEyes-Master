@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhpan.bannerview.BannerViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="207dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:background="@color/blue"
+    android:id="@+id/bannerViewPager"
+    tools:listitem="@layout/item_horizonrtal_scroll_card_type_item">
+
+</com.zhpan.bannerview.BannerViewPager>
